@@ -11,8 +11,8 @@ import (
 )
 
 func Part1(input string) int {
-	arr1 := []int64{}
-	arr2 := []int64{}
+	arr1 := []int{}
+	arr2 := []int{}
 
 	for _, l := range strings.Split(input, "\n") {
 		parts := strings.Split(l, " ")
@@ -32,8 +32,8 @@ func Part1(input string) int {
 }
 
 func Part2(input string) int {
-	arr := []int64{}
-	fr := map[int64]int{}
+	arr := []int{}
+	fr := map[int]int{}
 
 	for _, l := range strings.Split(input, "\n") {
 		parts := strings.Split(l, " ")

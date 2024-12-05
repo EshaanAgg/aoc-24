@@ -8,15 +8,15 @@ import (
 )
 
 func TestPart1(t *testing.T) {
-	b, _ := os.ReadFile("../data/day02/sample.txt")
+	b, _ := os.ReadFile("../data/day05/sample.txt")
 	input := string(b)
 
-	assert.Equal(t, Part1(input), 2)
+	assert.Equal(t, 143, Part1(input))
 }
 
 func TestPart2(t *testing.T) {
-	b, _ := os.ReadFile("../data/day02/sample.txt")
+	b, _ := os.ReadFile("../data/day05/sample.txt")
 	input := string(b)
 
-	assert.Equal(t, Part2(input), 4)
+	assert.Equal(t, 123, Part2(input))
 }

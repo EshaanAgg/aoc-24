@@ -8,11 +8,11 @@ import (
 	"github.com/eshaanagg/aoc24/common"
 )
 
-func parse(input string) [][]int64 {
-	fin := [][]int64{}
+func parse(input string) [][]int {
+	fin := [][]int{}
 
 	for _, l := range strings.Split(input, "\n") {
-		arr := []int64{}
+		arr := []int{}
 		for _, n := range strings.Split(l, " ") {
 			arr = append(arr, common.ParseInt(n))
 		}
@@ -22,7 +22,7 @@ func parse(input string) [][]int64 {
 	return fin
 }
 
-func check(a int64, b int64, incr bool) bool {
+func check(a int, b int, incr bool) bool {
 	if incr && a > b && a-b <= 3 {
 		return true
 	}
@@ -34,7 +34,7 @@ func check(a int64, b int64, incr bool) bool {
 	return false
 }
 
-func checkRow(arr []int64) bool {
+func checkRow(arr []int) bool {
 	n := len(arr)
 	if n <= 1 {
 		return true
@@ -54,14 +54,14 @@ func checkRow(arr []int64) bool {
 	return true
 }
 
-func checkRow2(arr []int64) bool {
+func checkRow2(arr []int) bool {
 	if checkRow(arr) {
 		return true
 	}
 
 	n := len(arr)
 	for idx := range n {
-		p := []int64{}
+		p := []int{}
 		for j, ele := range arr {
 			if j != idx {
 				p = append(p, ele)
@@ -75,9 +75,9 @@ func checkRow2(arr []int64) bool {
 	return false
 }
 
-func Part1(input string) int64 {
+func Part1(input string) int {
 	rows := parse(input)
-	cnt := int64(0)
+	cnt := 0
 
 	for _, arr := range rows {
 		if checkRow(arr) {
@@ -88,9 +88,9 @@ func Part1(input string) int64 {
 	return cnt
 }
 
-func Part2(input string) int64 {
+func Part2(input string) int {
 	rows := parse(input)
-	cnt := int64(0)
+	cnt := 0
 
 	for _, arr := range rows {
 		if checkRow2(arr) {
